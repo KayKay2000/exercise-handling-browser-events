@@ -7,10 +7,14 @@
 </head>
 <body>
   <!-- HTML goes here -->
-
+<button> PRESS ME</button>
   <script>
     // JavaScript goes here
-
+function leftClick () {
+  console.log("You Left Clicked")
+}
+const button = document.querySelector("button")
+button.addEventListener("click", leftClick )
   </script>
 </body>
 </html>

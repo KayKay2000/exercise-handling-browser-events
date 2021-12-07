@@ -25,7 +25,27 @@
 
   <script>
     // JavaScript goes here
+    let newItemForm = document.querySelector("#newItemForm")
+    let shoppingList = document.querySelector("#shoppingList")
+    let button = document.querySelector("#addButton")
+    let input = document.querySelector("#item")
     
+    newItemForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      newItem()
+
+    })
+    function newItem (){
+      let newLi = document.createElement("li")
+      let deleteBtn = document.createElement("button")
+      deleteBtn.innerHTML = "Delete"
+      deleteBtn.addEventListener("click", () =>
+      {newLi.remove()})
+      newLi.innerHTML = input.value
+      shoppingList.appendChild(newLi)
+      newLi.appendChild(deleteBtn)
+      input.value = ""
+    }
   </script>
 </body>
 </html>
